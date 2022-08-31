@@ -1,10 +1,7 @@
 using EcommerceAPI;
 using EcommerceAPI.Data;
 using EcommerceAPI.Facades;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.IdentityModel.Tokens;
-using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,7 +11,12 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddDbContext<ApiContext>(opt => opt.UseInMemoryDatabase("ProductsDb.db"));
+builder.Services.AddDbContext<ApiContext>(options =>
+{
+    var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+    options.UseSqlite(connectionString);
+
+});
 builder.Services.AddTransient<IProductsRepository, ProductsRepository>();
 builder.Services.AddMemoryCache();
 

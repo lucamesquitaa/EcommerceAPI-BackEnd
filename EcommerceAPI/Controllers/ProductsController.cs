@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace EcommerceAPI.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("v1/[controller]")]
     public class ProductsController : ControllerBase
     {
         private readonly IProductsRepository _repository;
@@ -19,26 +19,22 @@ namespace EcommerceAPI.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
-            var products = await _repository.GetProductsAsync();
-            var productsList = new List<ProductsDTO>();
-            try
-            {
-                foreach (var product in products)
-                {
-                    var productsDTO = new ProductsDTO
-                    {
-                        Title = product.Title,
-                        Price = product.Price,
-                        Requested = product.Requested
-                    };
-                    productsList.Add(productsDTO);
-                }
-                return productsList.Any() ? Ok(productsList) : NotFound();
-            }
-            catch (Exception e)
-            {
-                return BadRequest();
-            }
+            var response = await _repository.GetProductsAsync();
+            return response is not null ? Ok(response) : BadRequest();
+
+        }
+        [HttpPost]
+        public async Task<IActionResult> AddProducts(Products products)
+        {
+            var response = await _repository.PostProductAsync(products);
+            return response is not null ? Ok(response) : BadRequest();
+        }
+
+        [HttpPatch]
+        public async Task<IActionResult> EditProducts(ProductsDTO productsDTO)
+        {
+            var response = await _repository.PatchProductAsync(productsDTO);
+            return response is not null ? Ok(response) : BadRequest();
         }
     }
 }
