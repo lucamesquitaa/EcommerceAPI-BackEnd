@@ -5,7 +5,7 @@ namespace EcommerceAPI.Data
 {
     public class ApiContext : DbContext
     {
-        public DbSet<Products> ProductsDatabase { get; set; }
+        public DbSet<Products> ProductsEcommerceDB { get; set; }
         public ApiContext(DbContextOptions<ApiContext> options) : base(options)
         {
             Database.EnsureCreated();

@@ -30,10 +30,10 @@ namespace EcommerceAPI.Controllers
             return response is not null ? Ok(response) : BadRequest();
         }
 
-        [HttpPatch]
+        [HttpPut]
         public async Task<IActionResult> EditProducts(ProductsDTO productsDTO)
         {
-            var response = await _repository.PatchProductAsync(productsDTO);
+            var response = await _repository.PutProductAsync(productsDTO);
             return response is not null ? Ok(response) : BadRequest();
         }
     }
