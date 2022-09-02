@@ -23,18 +23,32 @@ namespace EcommerceAPI.Controllers
             return response is not null ? Ok(response) : BadRequest();
 
         }
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetById(int id)
+        {
+            var response = await _repository.GetProductByIdAsync(id);
+            return response is not null ? Ok(response) : BadRequest();
+
+        }
+
         [HttpPost]
-        public async Task<IActionResult> AddProducts(Products products)
+        public async Task<IActionResult> AddProduct(Products products)
         {
             var response = await _repository.PostProductAsync(products);
             return response is not null ? Ok(response) : BadRequest();
         }
 
         [HttpPut]
-        public async Task<IActionResult> EditProducts(ProductsDTO productsDTO)
+        public async Task<IActionResult> EditProduct(ProductsDTO productsDTO)
         {
             var response = await _repository.PutProductAsync(productsDTO);
             return response is not null ? Ok(response) : BadRequest();
+        }
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteProduct(int id)
+        {
+            var response = await _repository.DeleteProductAsync(id);
+            return response == true ? Ok() : BadRequest();
         }
     }
 }
