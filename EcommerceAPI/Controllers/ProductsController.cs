@@ -1,6 +1,7 @@
 ﻿using EcommerceAPI.Data;
 using EcommerceAPI.Facades;
 using EcommerceAPI.Models;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EcommerceAPI.Controllers
@@ -15,7 +16,7 @@ namespace EcommerceAPI.Controllers
             _repository = repository;
         }
 
-
+        [EnableCors("Teste")]
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
