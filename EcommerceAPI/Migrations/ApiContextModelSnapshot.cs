@@ -25,6 +25,14 @@ namespace EcommerceAPI.Migrations
                     b.Property<int>("Available")
                         .HasColumnType("INTEGER");
 
+                    b.Property<string>("Category")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Photo")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
                     b.Property<double>("Price")
                         .HasColumnType("REAL");
 
@@ -34,7 +42,7 @@ namespace EcommerceAPI.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("ProductsEcommerceDB");
+                    b.ToTable("ContextProductsAPI");
                 });
 #pragma warning restore 612, 618
         }

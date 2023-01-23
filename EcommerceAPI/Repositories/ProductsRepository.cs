@@ -15,7 +15,11 @@ namespace EcommerceAPI.Facades
         {
             try
             {
-                var response = await _context.ProductsEcommerceDB.ToListAsync();
+                var response = await _context.ContextProductsAPI.AsNoTracking().ToListAsync();
+                if (response == null)
+                {
+                    throw new Exception("Was not found products");
+                }
                 return response;
             }catch (Exception e)
             {
@@ -27,7 +31,11 @@ namespace EcommerceAPI.Facades
         {
             try
             {
-                var response = await _context.ProductsEcommerceDB.FindAsync(id);
+                var response = await _context.ContextProductsAPI.AsNoTracking().FirstOrDefaultAsync(x => x.Id == id);
+                if (response == null)
+                {
+                    throw new Exception("Was not found a matching id");
+                }
                 return response;
             }
             catch (Exception e)
@@ -37,29 +45,34 @@ namespace EcommerceAPI.Facades
             }
         }
 
-        public async Task<Products> PutProductAsync(ProductsDTO productDTO)
+        public async Task<Products> PutProductAsync(int id, ProductsDTO productDTO)
         {
             try {
-                int quantityAvailable = await _context.ProductsEcommerceDB.Where(x => x.Id == productDTO.Id).Select(x => x.Available).FirstOrDefaultAsync();
-                if (productDTO.Requested > quantityAvailable)
-                {
-                    throw new Exception("The quantity requested is bigger than quantity available");
-                }
-                int id = await _context.ProductsEcommerceDB.Where(x => x.Id == productDTO.Id).Select(x => x.Id).FirstOrDefaultAsync();
-                if (id <= 0)
+                Products produto = await _context.ContextProductsAPI.AsNoTracking().FirstOrDefaultAsync(x => x.Id == id)
+        ;
+                if (produto == null || produto.Id <= 0)
                 {
                     throw new Exception("Was not found a matching id");
                 }
-                var products = new Products
+
+                if (productDTO.Requested > produto.Available)
                 {
-                    Id = id,
-                    Title = await _context.ProductsEcommerceDB.Where(x => x.Id == productDTO.Id).Select(x => x.Title).FirstOrDefaultAsync(),
-                    Price = await _context.ProductsEcommerceDB.Where(x => x.Id == productDTO.Id).Select(x => x.Price).FirstOrDefaultAsync(),
-                    Available = (quantityAvailable - productDTO.Requested)
+                    throw new Exception("The quantity requested is bigger than quantity available");
+                }
+                
+                var newProduct = new Products
+                {
+                    Id = produto.Id,
+                    Title = produto.Title,
+                    Photo = produto.Photo,
+                    Category = produto.Category,
+                    Price = produto.Price,
+                    Available = (produto.Available - productDTO.Requested)
                 };
-                _context.ProductsEcommerceDB.Update(products);
+
+                _context.ContextProductsAPI.Update(newProduct);
                 await _context.SaveChangesAsync();
-                return products;
+                return newProduct;
             }
              catch (Exception e)
             {
@@ -73,7 +86,7 @@ namespace EcommerceAPI.Facades
         {
             try
             {
-                _context.ProductsEcommerceDB.Add(product);
+                _context.ContextProductsAPI.Add(product);
                 await _context.SaveChangesAsync();
                 return product;
             }catch(Exception e)
@@ -87,8 +100,12 @@ namespace EcommerceAPI.Facades
         {
             try
             {
-                var response = await _context.ProductsEcommerceDB.FindAsync(id);
-                _context.ProductsEcommerceDB.Remove(response);
+                var response = await _context.ContextProductsAPI.FindAsync(id);
+                if (response == null)
+                {
+                    throw new Exception("Was not found a matching id");
+                }
+                _context.ContextProductsAPI.Remove(response);
                 await _context.SaveChangesAsync();
                 return true;
             }

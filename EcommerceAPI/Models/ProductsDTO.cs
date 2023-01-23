@@ -1,9 +1,10 @@
-﻿namespace EcommerceAPI.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace EcommerceAPI.Models
 {
     public class ProductsDTO
     {
-        public int Id { get; set; }
-        public string Title { get; set; }
+        [Required]
         public int Requested { get; set; }
     }
 }

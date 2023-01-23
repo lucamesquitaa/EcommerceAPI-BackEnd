@@ -1,7 +1,6 @@
 ﻿using EcommerceAPI.Data;
 using EcommerceAPI.Facades;
 using EcommerceAPI.Models;
-using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EcommerceAPI.Controllers
@@ -16,7 +15,7 @@ namespace EcommerceAPI.Controllers
             _repository = repository;
         }
 
-        [EnableCors("Teste")]
+        
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
@@ -33,16 +32,16 @@ namespace EcommerceAPI.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddProduct(Products products)
+        public async Task<IActionResult> AddProduct([FromBody] Products products)
         {
             var response = await _repository.PostProductAsync(products);
             return response is not null ? Ok(response) : BadRequest();
         }
 
-        [HttpPut]
-        public async Task<IActionResult> EditProduct(ProductsDTO productsDTO)
+        [HttpPut("{id}")]
+        public async Task<IActionResult> EditProduct(int id, [FromBody] ProductsDTO productsDTO)
         {
-            var response = await _repository.PutProductAsync(productsDTO);
+            var response = await _repository.PutProductAsync(id, productsDTO);
             return response is not null ? Ok(response) : BadRequest();
         }
         [HttpDelete("{id}")]
