@@ -38,7 +38,7 @@ namespace Tests
             return _products.Where(a => a.Id == id).FirstOrDefault();
         }
 
-        public async Task<Products> PutProductAsync(int id, ProductsDTO productsDTO)
+        public async Task<Products> PatchProductAsync(int id, ProductsDTO productsDTO)
         {
             var product = _products.Where(a => a.Id == id).FirstOrDefault();
             DeleteProductAsync(id);
@@ -62,11 +62,11 @@ namespace Tests
             return products;
         }
 
-        public async Task<bool> DeleteProductAsync(int id)
+        public async Task<Products> DeleteProductAsync(int id)
         {
             var item = _products.First(a => a.Id == id);
             _products.Remove(item);
-            return true;
+            return item;
         }
     }
 }

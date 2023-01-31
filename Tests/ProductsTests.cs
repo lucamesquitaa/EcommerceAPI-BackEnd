@@ -73,7 +73,7 @@ namespace Tests
             // Act
             var badResult = _controller.EditProduct(2, new ProductsDTO() { Requested = 3000 });
             // Assert
-            Assert.IsType<BadRequestResult>(badResult.Result);
+            Assert.IsType<BadRequestObjectResult>(badResult.Result);
         }
 
         [Fact]
@@ -88,7 +88,7 @@ namespace Tests
                 Available = 400
             });
             // Assert
-            Assert.IsType<BadRequestResult>(badResult.Result);
+            Assert.IsType<BadRequestObjectResult>(badResult.Result);
         }
     }
 }
