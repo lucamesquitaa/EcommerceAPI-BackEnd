@@ -1,5 +1,5 @@
 ﻿using EcommerceAPI.Data;
-using EcommerceAPI.Facades;
+using EcommerceAPI.Repositories;
 using EcommerceAPI.Models;
 using EcommerceAPI.Repositories.Users;
 using EcommerceAPI.Services;
@@ -44,9 +44,9 @@ namespace EcommerceAPI.Controllers
 
         [HttpPatch("{id}")]
         [Authorize]
-        public async Task<IActionResult> EditProduct(int id, [FromBody] ProductsDTO productsDTO)
+        public async Task<IActionResult> EditProduct(int id, int requested)
         {
-            var response = await _repository.PatchProductAsync(id, productsDTO);
+            var response = await _repository.PatchProductAsync(id, requested);
             return response is not null ? Ok(response) : BadRequest("Não foi posivel editar o produto");
         }
 

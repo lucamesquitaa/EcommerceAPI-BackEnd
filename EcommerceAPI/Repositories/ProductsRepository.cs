@@ -1,59 +1,107 @@
-﻿using EcommerceAPI.Data;
+﻿using EcommerceAPI.Calculator;
+using EcommerceAPI.Data;
 using EcommerceAPI.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace EcommerceAPI.Facades
+namespace EcommerceAPI.Repositories
 {
     public class ProductsRepository : IProductsRepository
     {
         private readonly ApiContext _context;
-        public ProductsRepository(ApiContext context)
+        private readonly IProductCalculator _calculator;
+        public ProductsRepository(ApiContext context,
+                                  IProductCalculator calculator)
         {
             _context = context;
+            _calculator = calculator;
         }
 
         public async Task<IEnumerable<Products>> GetProductsAsync()
         {
-            var response = await _context.ContextProductsAPI.AsNoTracking().ToListAsync();
-            return response;
+            try
+            {
+                var response = await _context.ContextProductsAPI.AsNoTracking().ToListAsync();
+
+                if (response == null)
+                    throw new Exception();
+
+                return response;
+            }catch(Exception)
+            {
+                return null;
+            }
         }
 
         public async Task<Products> GetProductByIdAsync(int id)
         {
-            var response = await _context.ContextProductsAPI.AsNoTracking().FirstOrDefaultAsync(x => x.Id == id);
-            return response;
-        }
+            try
+            {
+                var response = await _context.ContextProductsAPI.AsNoTracking().FirstOrDefaultAsync(x => x.Id == id);
 
-        public async Task<Products> PatchProductAsync(int id, ProductsDTO productDTO)
-        {
-            Products? produto = await _context.ContextProductsAPI.AsNoTracking().FirstOrDefaultAsync(x => x.Id == id);
-       
-            if (productDTO.Requested > produto.Available)
+                if (response == null)
+                    throw new Exception();
+
+                return response;
+            }catch(Exception)
             {
                 return null;
             }
+        }
 
-            produto.Available = produto.Available - productDTO.Requested;
-            
-            _context.ContextProductsAPI.Update(produto);
-            await _context.SaveChangesAsync();
-            return produto;
+        public async Task<Products> PatchProductAsync(int id, int requested)
+        {
+            try
+            {
+                Products? product = await _context.ContextProductsAPI.AsNoTracking().FirstOrDefaultAsync(x => x.Id == id);
+
+                if (product == null)
+                    throw new Exception();
+
+                int newAvailable = _calculator.QuantityAvailableCalculator(product, requested);
+
+                product.Available = newAvailable;
+
+                _context.ContextProductsAPI.Update(product);
+                await _context.SaveChangesAsync();
+
+                return product;
+            }catch(Exception)
+            {
+                return null;
+            }
         }
         
         public async Task<Products> PostProductAsync(Products product)
         {
-            _context.ContextProductsAPI.Add(product);
-            await _context.SaveChangesAsync();
-            return product;
+            try
+            {
+                _context.ContextProductsAPI.Add(product);
+                await _context.SaveChangesAsync();
+
+                return product;
+            }catch(Exception)
+            {
+                return null;
+            }
         }
 
         public async Task<Products> DeleteProductAsync(int id)
         {
-            var response = await _context.ContextProductsAPI.FindAsync(id);
+            try
+            {
+                var response = await _context.ContextProductsAPI.FindAsync(id);
 
-            _context.ContextProductsAPI.Remove(response);
-            await _context.SaveChangesAsync();
-            return response;
+                if(response == null)
+                    throw new Exception();
+
+                _context.ContextProductsAPI.Remove(response);
+                await _context.SaveChangesAsync();
+
+                return response;
+            }catch(Exception)
+            {
+                return null;
+            }
         }
     }
 }

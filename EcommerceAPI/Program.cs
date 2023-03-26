@@ -1,13 +1,11 @@
-﻿using EcommerceAPI;
+﻿using EcommerceAPI.Calculator;
 using EcommerceAPI.Data;
-using EcommerceAPI.Facades;
-using EcommerceAPI.Repositories.Users;
+using EcommerceAPI.Repositories;
 using EcommerceAPI.Settings;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
-using NuGet.Configuration;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -59,6 +57,7 @@ builder.Services.AddDbContext<ApiContext>(options =>
 
 });
 builder.Services.AddTransient<IProductsRepository, ProductsRepository>();
+builder.Services.AddTransient<IProductCalculator, ProductCalculator>();
 builder.Services.AddMemoryCache();
 builder.Services.AddCors();
 

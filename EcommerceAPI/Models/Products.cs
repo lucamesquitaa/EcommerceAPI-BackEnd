@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace EcommerceAPI.Models
 {
@@ -8,11 +7,11 @@ namespace EcommerceAPI.Models
         [Key]
         public int Id { get; set; }
         [Required]
-        public string? Title { get; set; }
+        public string Title { get; set; } = string.Empty;
         [Required]
-        public string? Photo { get; set; }
+        public string Photo { get; set; } = string.Empty;
         [Required]
-        public string? Category { get; set; }
+        public string Category { get; set; } = string.Empty;
         [Required]
         public double Price { get; set; }
         [Required]

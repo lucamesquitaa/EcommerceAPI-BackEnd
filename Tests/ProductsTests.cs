@@ -53,7 +53,7 @@ namespace Tests
         public void Put_WhenCalled_ReturnsOkResult()
         {
             // Act
-            var okResult = _controller.EditProduct(2, new ProductsDTO() { Requested = 12});
+            var okResult = _controller.EditProduct(2, 12);
             // Assert
             Assert.IsType<OkObjectResult>(okResult.Result);
         }
@@ -71,7 +71,7 @@ namespace Tests
         public void Put_WhenWrongRequested_ReturnsBadRequest()
         {
             // Act
-            var badResult = _controller.EditProduct(2, new ProductsDTO() { Requested = 3000 });
+            var badResult = _controller.EditProduct(2, 3000);
             // Assert
             Assert.IsType<BadRequestObjectResult>(badResult.Result);
         }

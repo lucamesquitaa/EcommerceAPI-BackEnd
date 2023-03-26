@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "pHOegqu+4Zw5SRMlIq8h8/jT1/qf4NPiivObMKrg6+Cx7jMUov7/xw0ZPOslD3Rg7gOdaS0zep5fujEBmof2hg==",
+  "dgSpecHash": "b/XH+AOnsQiePwj/Nz8JGfrzbfurV1RVPT2aowD0ys89D5LjV2BzNJezZqihHqEheaDdYGiJArsKrMfDq7AaVw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\USUARIO\\Desktop\\PROJETOS_VSTUDIO\\EcommerceAPI\\EcommerceAPI\\EcommerceAPI.csproj",
+  "projectFilePath": "E:\\AREA DE TRABALHO\\VS_STUDIO_PROJECTS\\EcommerceAPI-BackEnd\\EcommerceAPI\\EcommerceAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\USUARIO\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
     "C:\\Users\\USUARIO\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",

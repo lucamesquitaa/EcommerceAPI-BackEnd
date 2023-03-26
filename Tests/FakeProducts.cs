@@ -38,11 +38,11 @@ namespace Tests
             return _products.Where(a => a.Id == id).FirstOrDefault();
         }
 
-        public async Task<Products> PatchProductAsync(int id, ProductsDTO productsDTO)
+        public async Task<Products> PatchProductAsync(int id, int requested)
         {
             var product = _products.Where(a => a.Id == id).FirstOrDefault();
             DeleteProductAsync(id);
-            product.Available = product.Available - productsDTO.Requested;
+            product.Available = product.Available - requested;
 
             if (product.Available < 0)
                 return null;
