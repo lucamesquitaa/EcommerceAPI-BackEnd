@@ -27,7 +27,8 @@ namespace EcommerceAPI.Controllers
         }
 
         [HttpGet("{id}")]
-        [Authorize]
+        [AllowAnonymous]
+        //[Authorize]
         public async Task<IActionResult> GetById(int id)
         {
             var response = await _repository.GetProductByIdAsync(id);
@@ -35,23 +36,26 @@ namespace EcommerceAPI.Controllers
         }
 
         [HttpPost]
-        [Authorize]
+        [AllowAnonymous]
+        //[Authorize]
         public async Task<IActionResult> AddProduct([FromBody] Products products)
         {
             var response = await _repository.PostProductAsync(products);
             return response is not null ? Ok(response) : BadRequest("Não foi posivel adicionar o produto");
         }
 
-        [HttpPatch("{id}")]
-        [Authorize]
-        public async Task<IActionResult> EditProduct(int id, int requested)
+        [HttpPut("{id}")]
+        [AllowAnonymous]
+        //[Authorize]
+        public async Task<IActionResult> EditProduct(int id, [FromBody] int requested)
         {
-            var response = await _repository.PatchProductAsync(id, requested);
+            var response = await _repository.PutProductAsync(id, requested);
             return response is not null ? Ok(response) : BadRequest("Não foi posivel editar o produto");
         }
 
         [HttpDelete("{id}")]
-        [Authorize]
+        [AllowAnonymous]
+        //[Authorize]
         public async Task<IActionResult> DeleteProduct(int id)
         {
             var response = await _repository.DeleteProductAsync(id);

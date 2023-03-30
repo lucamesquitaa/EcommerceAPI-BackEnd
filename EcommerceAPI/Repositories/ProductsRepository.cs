@@ -48,7 +48,7 @@ namespace EcommerceAPI.Repositories
             }
         }
 
-        public async Task<Products> PatchProductAsync(int id, int requested)
+        public async Task<Products> PutProductAsync(int id, int requested)
         {
             try
             {
@@ -103,5 +103,6 @@ namespace EcommerceAPI.Repositories
                 return null;
             }
         }
+
     }
 }

@@ -1,5 +1,5 @@
-﻿using EcommerceAPI.Facades;
-using EcommerceAPI.Models;
+﻿using EcommerceAPI.Models;
+using EcommerceAPI.Repositories;
 
 namespace Tests
 {
@@ -38,7 +38,7 @@ namespace Tests
             return _products.Where(a => a.Id == id).FirstOrDefault();
         }
 
-        public async Task<Products> PatchProductAsync(int id, int requested)
+        public async Task<Products> PutProductAsync(int id, int requested)
         {
             var product = _products.Where(a => a.Id == id).FirstOrDefault();
             DeleteProductAsync(id);

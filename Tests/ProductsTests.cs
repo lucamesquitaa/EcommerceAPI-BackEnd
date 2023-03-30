@@ -1,5 +1,5 @@
 ﻿using EcommerceAPI.Controllers;
-using EcommerceAPI.Facades;
+using EcommerceAPI.Repositories;
 using EcommerceAPI.Models;
 using Microsoft.AspNetCore.Mvc;
 

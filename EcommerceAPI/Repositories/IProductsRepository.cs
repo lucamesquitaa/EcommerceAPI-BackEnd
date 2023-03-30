@@ -7,8 +7,8 @@ namespace EcommerceAPI.Repositories
     {
         public Task<IEnumerable<Products>> GetProductsAsync();
         public Task<Products> GetProductByIdAsync(int id);
-        public Task<Products> PatchProductAsync(int id, int requested);
-        public Task<Products> PostProductAsync([FromBody] Products products);
+        public Task<Products> PutProductAsync(int id, int requested);
+        public Task<Products> PostProductAsync(Products products);
         public Task<Products> DeleteProductAsync(int id);
     }
 }

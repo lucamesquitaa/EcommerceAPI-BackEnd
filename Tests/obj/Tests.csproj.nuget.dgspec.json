@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "E:\\AREA DE TRABALHO\\VS_STUDIO_PROJECTS\\EcommerceAPI-BackEnd\\Tests\\Tests.csproj": {}
+    "D:\\LucaDev-Projects-BACK\\EcommerceAPI-BackEnd\\Tests\\Tests.csproj": {}
   },
   "projects": {
-    "E:\\AREA DE TRABALHO\\VS_STUDIO_PROJECTS\\EcommerceAPI-BackEnd\\EcommerceAPI\\EcommerceAPI.csproj": {
+    "D:\\LucaDev-Projects-BACK\\EcommerceAPI-BackEnd\\EcommerceAPI\\EcommerceAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\AREA DE TRABALHO\\VS_STUDIO_PROJECTS\\EcommerceAPI-BackEnd\\EcommerceAPI\\EcommerceAPI.csproj",
+        "projectUniqueName": "D:\\LucaDev-Projects-BACK\\EcommerceAPI-BackEnd\\EcommerceAPI\\EcommerceAPI.csproj",
         "projectName": "EcommerceAPI",
-        "projectPath": "E:\\AREA DE TRABALHO\\VS_STUDIO_PROJECTS\\EcommerceAPI-BackEnd\\EcommerceAPI\\EcommerceAPI.csproj",
-        "packagesPath": "C:\\Users\\USUARIO\\.nuget\\packages\\",
-        "outputPath": "E:\\AREA DE TRABALHO\\VS_STUDIO_PROJECTS\\EcommerceAPI-BackEnd\\EcommerceAPI\\obj\\",
+        "projectPath": "D:\\LucaDev-Projects-BACK\\EcommerceAPI-BackEnd\\EcommerceAPI\\EcommerceAPI.csproj",
+        "packagesPath": "C:\\Users\\lucam\\.nuget\\packages\\",
+        "outputPath": "D:\\LucaDev-Projects-BACK\\EcommerceAPI-BackEnd\\EcommerceAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\USUARIO\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\lucam\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -102,21 +102,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\AREA DE TRABALHO\\VS_STUDIO_PROJECTS\\EcommerceAPI-BackEnd\\Tests\\Tests.csproj": {
+    "D:\\LucaDev-Projects-BACK\\EcommerceAPI-BackEnd\\Tests\\Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\AREA DE TRABALHO\\VS_STUDIO_PROJECTS\\EcommerceAPI-BackEnd\\Tests\\Tests.csproj",
+        "projectUniqueName": "D:\\LucaDev-Projects-BACK\\EcommerceAPI-BackEnd\\Tests\\Tests.csproj",
         "projectName": "Tests",
-        "projectPath": "E:\\AREA DE TRABALHO\\VS_STUDIO_PROJECTS\\EcommerceAPI-BackEnd\\Tests\\Tests.csproj",
-        "packagesPath": "C:\\Users\\USUARIO\\.nuget\\packages\\",
-        "outputPath": "E:\\AREA DE TRABALHO\\VS_STUDIO_PROJECTS\\EcommerceAPI-BackEnd\\Tests\\obj\\",
+        "projectPath": "D:\\LucaDev-Projects-BACK\\EcommerceAPI-BackEnd\\Tests\\Tests.csproj",
+        "packagesPath": "C:\\Users\\lucam\\.nuget\\packages\\",
+        "outputPath": "D:\\LucaDev-Projects-BACK\\EcommerceAPI-BackEnd\\Tests\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\USUARIO\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\lucam\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -130,8 +130,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "E:\\AREA DE TRABALHO\\VS_STUDIO_PROJECTS\\EcommerceAPI-BackEnd\\EcommerceAPI\\EcommerceAPI.csproj": {
-                "projectPath": "E:\\AREA DE TRABALHO\\VS_STUDIO_PROJECTS\\EcommerceAPI-BackEnd\\EcommerceAPI\\EcommerceAPI.csproj"
+              "D:\\LucaDev-Projects-BACK\\EcommerceAPI-BackEnd\\EcommerceAPI\\EcommerceAPI.csproj": {
+                "projectPath": "D:\\LucaDev-Projects-BACK\\EcommerceAPI-BackEnd\\EcommerceAPI\\EcommerceAPI.csproj"
               }
             }
           }
@@ -183,7 +183,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }
