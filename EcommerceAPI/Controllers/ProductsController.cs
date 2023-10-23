@@ -28,7 +28,6 @@ namespace EcommerceAPI.Controllers
 
         [HttpGet("{id}")]
         [AllowAnonymous]
-        //[Authorize]
         public async Task<IActionResult> GetById(int id)
         {
             var response = await _repository.GetProductByIdAsync(id);
@@ -36,8 +35,7 @@ namespace EcommerceAPI.Controllers
         }
 
         [HttpPost]
-        [AllowAnonymous]
-        //[Authorize]
+        [Authorize]
         public async Task<IActionResult> AddProduct([FromBody] Products products)
         {
             var response = await _repository.PostProductAsync(products);
@@ -45,8 +43,7 @@ namespace EcommerceAPI.Controllers
         }
 
         [HttpPut("{id}")]
-        [AllowAnonymous]
-        //[Authorize]
+        [Authorize]
         public async Task<IActionResult> EditProduct(int id, [FromBody] int requested)
         {
             var response = await _repository.PutProductAsync(id, requested);
@@ -54,8 +51,7 @@ namespace EcommerceAPI.Controllers
         }
 
         [HttpDelete("{id}")]
-        [AllowAnonymous]
-        //[Authorize]
+        [Authorize]
         public async Task<IActionResult> DeleteProduct(int id)
         {
             var response = await _repository.DeleteProductAsync(id);
