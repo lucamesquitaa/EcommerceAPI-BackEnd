@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "aYz/6aiSDRibmSTnrpn1eecCD3WUBscDN9ipRlhZxeeGFIXPIivH54FUDAlh94+UdcG9b58cb08sOxKWcB7pZw==",
+  "dgSpecHash": "BpoxQWTegKncszT6UkzXIS2oOIJ/jUBHiRsiKiV/CXYNPx/QqbhIhUwPJBZ64qtPvgWXfoENzD03I1I3KJ18eg==",
   "success": true,
-  "projectFilePath": "D:\\LucaDev-Projects-BACK\\EcommerceAPI-BackEnd\\Tests\\Tests.csproj",
+  "projectFilePath": "D:\\LucaDev-Projects-BACK\\ecommercebaseexamplebase\\Tests\\Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\lucam\\.nuget\\packages\\coverlet.collector\\3.1.2\\coverlet.collector.3.1.2.nupkg.sha512",
     "C:\\Users\\lucam\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",

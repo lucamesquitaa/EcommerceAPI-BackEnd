@@ -11558,11 +11558,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\LucaDev-Projects-BACK\\EcommerceAPI-BackEnd\\EcommerceAPI\\EcommerceAPI.csproj",
+      "projectUniqueName": "D:\\LucaDev-Projects-BACK\\ecommercebaseexamplebase\\EcommerceAPI\\EcommerceAPI.csproj",
       "projectName": "EcommerceAPI",
-      "projectPath": "D:\\LucaDev-Projects-BACK\\EcommerceAPI-BackEnd\\EcommerceAPI\\EcommerceAPI.csproj",
+      "projectPath": "D:\\LucaDev-Projects-BACK\\ecommercebaseexamplebase\\EcommerceAPI\\EcommerceAPI.csproj",
       "packagesPath": "C:\\Users\\lucam\\.nuget\\packages\\",
-      "outputPath": "D:\\LucaDev-Projects-BACK\\EcommerceAPI-BackEnd\\EcommerceAPI\\obj\\",
+      "outputPath": "D:\\LucaDev-Projects-BACK\\ecommercebaseexamplebase\\EcommerceAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\lucam\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "LC048ANkp4CIgC8jiTCQI8Qz8qmNEUmQ5Izw1CCO7jSkxmqkLx51XFHohngvyX99tj+3NRKRjNzQdJOQJz0rsw==",
+  "dgSpecHash": "Ul49znRErDU0Fhn1FOQJnsoGg9kqW4PynRNUX0ffaOxZn0NknpR2gjYks2Mj+i48SPGkMIJA/f2w3fSp+fH81A==",
   "success": true,
-  "projectFilePath": "D:\\LucaDev-Projects-BACK\\EcommerceAPI-BackEnd\\EcommerceAPI\\EcommerceAPI.csproj",
+  "projectFilePath": "D:\\LucaDev-Projects-BACK\\ecommercebaseexamplebase\\EcommerceAPI\\EcommerceAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\lucam\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
     "C:\\Users\\lucam\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
