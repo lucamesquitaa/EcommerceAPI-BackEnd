@@ -20,7 +20,7 @@ namespace EcommerceAPI.Repositories
         {
             try
             {
-                var response = await _context.ContextProductsAPI.AsNoTracking().ToListAsync();
+                var response = await _context.productosAPIv1.AsNoTracking().ToListAsync();
 
                 if (response == null)
                     throw new Exception();
@@ -36,7 +36,7 @@ namespace EcommerceAPI.Repositories
         {
             try
             {
-                var response = await _context.ContextProductsAPI.AsNoTracking().FirstOrDefaultAsync(x => x.Id == id);
+                var response = await _context.productosAPIv1.AsNoTracking().FirstOrDefaultAsync(x => x.Id == id);
 
                 if (response == null)
                     throw new Exception();
@@ -52,7 +52,7 @@ namespace EcommerceAPI.Repositories
         {
             try
             {
-                Products? product = await _context.ContextProductsAPI.AsNoTracking().FirstOrDefaultAsync(x => x.Id == id);
+                Products? product = await _context.productosAPIv1.AsNoTracking().FirstOrDefaultAsync(x => x.Id == id);
 
                 if (product == null)
                     throw new Exception();
@@ -61,7 +61,7 @@ namespace EcommerceAPI.Repositories
 
                 product.Available = newAvailable;
 
-                _context.ContextProductsAPI.Update(product);
+                _context.productosAPIv1.Update(product);
                 await _context.SaveChangesAsync();
 
                 return product;
@@ -75,7 +75,7 @@ namespace EcommerceAPI.Repositories
         {
             try
             {
-                _context.ContextProductsAPI.Add(product);
+                _context.productosAPIv1.Add(product);
                 await _context.SaveChangesAsync();
 
                 return product;
@@ -89,12 +89,12 @@ namespace EcommerceAPI.Repositories
         {
             try
             {
-                var response = await _context.ContextProductsAPI.FindAsync(id);
+                var response = await _context.productosAPIv1.FindAsync(id);
 
                 if(response == null)
                     throw new Exception();
 
-                _context.ContextProductsAPI.Remove(response);
+                _context.productosAPIv1.Remove(response);
                 await _context.SaveChangesAsync();
 
                 return response;

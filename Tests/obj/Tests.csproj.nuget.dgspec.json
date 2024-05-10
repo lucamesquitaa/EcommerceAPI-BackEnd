@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "D:\\LucaDev-Projects-BACK\\ecommercebaseexamplebase\\Tests\\Tests.csproj": {}
+    "C:\\Users\\luca.mesquita\\Desktop\\Pessoal\\ecommbase-BACK\\EcommerceAPI-BackEnd\\Tests\\Tests.csproj": {}
   },
   "projects": {
-    "D:\\LucaDev-Projects-BACK\\ecommercebaseexamplebase\\EcommerceAPI\\EcommerceAPI.csproj": {
+    "C:\\Users\\luca.mesquita\\Desktop\\Pessoal\\ecommbase-BACK\\EcommerceAPI-BackEnd\\EcommerceAPI\\EcommerceAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\LucaDev-Projects-BACK\\ecommercebaseexamplebase\\EcommerceAPI\\EcommerceAPI.csproj",
+        "projectUniqueName": "C:\\Users\\luca.mesquita\\Desktop\\Pessoal\\ecommbase-BACK\\EcommerceAPI-BackEnd\\EcommerceAPI\\EcommerceAPI.csproj",
         "projectName": "EcommerceAPI",
-        "projectPath": "D:\\LucaDev-Projects-BACK\\ecommercebaseexamplebase\\EcommerceAPI\\EcommerceAPI.csproj",
-        "packagesPath": "C:\\Users\\lucam\\.nuget\\packages\\",
-        "outputPath": "D:\\LucaDev-Projects-BACK\\ecommercebaseexamplebase\\EcommerceAPI\\obj\\",
+        "projectPath": "C:\\Users\\luca.mesquita\\Desktop\\Pessoal\\ecommbase-BACK\\EcommerceAPI-BackEnd\\EcommerceAPI\\EcommerceAPI.csproj",
+        "packagesPath": "C:\\Users\\luca.mesquita\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\luca.mesquita\\Desktop\\Pessoal\\ecommbase-BACK\\EcommerceAPI-BackEnd\\EcommerceAPI\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\lucam\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\luca.mesquita\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -34,6 +39,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -60,7 +70,7 @@
               "target": "Package",
               "version": "[6.0.8, )"
             },
-            "Microsoft.EntityFrameworkCore.Sqlite": {
+            "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[6.0.8, )"
             },
@@ -102,21 +112,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\LucaDev-Projects-BACK\\ecommercebaseexamplebase\\Tests\\Tests.csproj": {
+    "C:\\Users\\luca.mesquita\\Desktop\\Pessoal\\ecommbase-BACK\\EcommerceAPI-BackEnd\\Tests\\Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\LucaDev-Projects-BACK\\ecommercebaseexamplebase\\Tests\\Tests.csproj",
+        "projectUniqueName": "C:\\Users\\luca.mesquita\\Desktop\\Pessoal\\ecommbase-BACK\\EcommerceAPI-BackEnd\\Tests\\Tests.csproj",
         "projectName": "Tests",
-        "projectPath": "D:\\LucaDev-Projects-BACK\\ecommercebaseexamplebase\\Tests\\Tests.csproj",
-        "packagesPath": "C:\\Users\\lucam\\.nuget\\packages\\",
-        "outputPath": "D:\\LucaDev-Projects-BACK\\ecommercebaseexamplebase\\Tests\\obj\\",
+        "projectPath": "C:\\Users\\luca.mesquita\\Desktop\\Pessoal\\ecommbase-BACK\\EcommerceAPI-BackEnd\\Tests\\Tests.csproj",
+        "packagesPath": "C:\\Users\\luca.mesquita\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\luca.mesquita\\Desktop\\Pessoal\\ecommbase-BACK\\EcommerceAPI-BackEnd\\Tests\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\lucam\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\luca.mesquita\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -124,14 +138,15 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\LucaDev-Projects-BACK\\ecommercebaseexamplebase\\EcommerceAPI\\EcommerceAPI.csproj": {
-                "projectPath": "D:\\LucaDev-Projects-BACK\\ecommercebaseexamplebase\\EcommerceAPI\\EcommerceAPI.csproj"
+              "C:\\Users\\luca.mesquita\\Desktop\\Pessoal\\ecommbase-BACK\\EcommerceAPI-BackEnd\\EcommerceAPI\\EcommerceAPI.csproj": {
+                "projectPath": "C:\\Users\\luca.mesquita\\Desktop\\Pessoal\\ecommbase-BACK\\EcommerceAPI-BackEnd\\EcommerceAPI\\EcommerceAPI.csproj"
               }
             }
           }
@@ -140,12 +155,21 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.8, )"
+            },
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
               "version": "[17.3.2, )"
@@ -183,7 +207,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }

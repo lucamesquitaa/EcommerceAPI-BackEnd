@@ -53,7 +53,7 @@ builder.Services.AddSwaggerGen(c =>
 builder.Services.AddDbContext<ApiContext>(options =>
 {
     var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-    options.UseSqlite(connectionString);
+    options.UseSqlServer(connectionString);
 
 });
 builder.Services.AddTransient<IProductsRepository, ProductsRepository>();
